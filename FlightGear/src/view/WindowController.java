@@ -65,8 +65,8 @@ public class WindowController implements Initializable  {
 	}
 
 	
-	public void resRudder(){
-		System.out.println("reset");
+	public void rudder_reset(){
+		
 		rudder.setValue(0.0);
 	}
 

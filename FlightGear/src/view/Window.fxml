@@ -6,47 +6,18 @@
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Circle?>
-<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-image: url(&quot;123.jpeg&quot;);" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.WindowController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="600.0" style="-fx-background-image: url(&quot;123.jpeg&quot;);" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.WindowController">
     <children>
-      <Text layoutX="155.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="By Or Butbul &amp; Liad Barnes " textAlignment="CENTER" wrappingWidth="325.30426025390625">
-         <font>
-            <Font name="Book Antiqua Bold Italic" size="23.0" />
-         </font>
-      </Text>
-        <Slider fx:id="rudder" blockIncrement="1.0" layoutX="78.0" layoutY="535.0" max="1.0" min="-1.0" onDragDropped="#resRudder" prefHeight="13.0" prefWidth="420.0" />
-        <Slider fx:id="throttle" layoutX="59.0" layoutY="227.0" orientation="VERTICAL" prefHeight="306.0" prefWidth="16.0" />
+        <Slider fx:id="rudder" blockIncrement="1.0" layoutX="114.0" layoutY="619.0" max="1.0" min="-1.0" prefHeight="14.0" prefWidth="350.0" />
+        <Slider fx:id="throttle" blockIncrement="100.0" layoutX="106.0" layoutY="306.0" max="1.0" orientation="VERTICAL" prefHeight="285.0" prefWidth="16.0" />
         <Text layoutX="274.0" layoutY="1.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="4.0" />
-        <Text layoutX="404.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Elevator" textAlignment="CENTER" wrappingWidth="87.20000000000005">
-            <font>
-                <Font name="System Bold" size="17.0" />
-            </font>
-        </Text>
-        <Text layoutX="266.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aileron0">
-            <font>
-                <Font name="System Bold" size="17.0" />
-            </font>
-        </Text>
-        <Text layoutX="12.0" layoutY="386.0" rotate="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="throttle">
-            <font>
-                <Font size="17.0" />
-            </font>
-        </Text>
-        <Text layoutX="263.0" layoutY="574.0" strokeType="OUTSIDE" strokeWidth="0.0" text="rudder">
-            <font>
-                <Font size="17.0" />
-            </font>
-        </Text>
-        <Text layoutX="72.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flightgear simulator" textAlignment="CENTER" underline="true" wrappingWidth="482.4000244140625">
-            <font>
-                <Font name="Cooper Black" size="40.0" />
-            </font>
-        </Text>
-        <Circle fx:id="outerCircle" fill="#ad6363" layoutX="293.0" layoutY="373.0" opacity="0.1" radius="100.0" stroke="#616161" strokeType="INSIDE" />
-        <Circle fx:id="innerCircle" fill="#ae6363" layoutX="293.0" layoutY="373.0" onMouseDragged="#innerDragged" onMousePressed="#innerPressed" onMouseReleased="#innerReleased" radius="20.0" stroke="BLACK">
+        <Circle fx:id="outerCircle" fill="#fcfcfc" layoutX="255.0" layoutY="386.0" opacity="0.01" radius="100.0" stroke="#616161" strokeType="INSIDE" />
+        <Circle fx:id="innerCircle" layoutX="300.0" layoutY="448.0" onMouseDragged="#innerDragged" onMousePressed="#innerPressed" onMouseReleased="#innerReleased" radius="22.0" stroke="BLACK">
             <cursor>
                 <Cursor fx:constant="OPEN_HAND" />
             </cursor>
@@ -57,9 +28,16 @@
                     </input>
                 </InnerShadow>
             </effect>
+         <fill>
+            <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="SNOW" />
+                  <Stop color="SNOW" offset="0.4570446735395189" />
+                  <Stop color="#4b514ad4" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
         </Circle>
-      <Button layoutX="503.0" layoutY="530.0" mnemonicParsing="false" onAction="#resRudder" text="Reset Rudder" />
+      <Button layoutX="470.0" layoutY="613.0" mnemonicParsing="false" onAction="#rudder_reset" text="Reset Rudder" />
     </children>
-    
-    
 </AnchorPane>
