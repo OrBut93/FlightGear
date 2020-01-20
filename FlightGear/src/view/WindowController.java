@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
 
 public class WindowController implements Initializable  {
 	ViewModel vm;
-	
+	MyModel m;
 	@FXML
 	Slider throttle;
 	@FXML
@@ -66,8 +66,8 @@ public class WindowController implements Initializable  {
 
 	
 	public void resRudder(){
-		System.out.println("hi");
-		
+		System.out.println("reset");
+		rudder.setValue(0.0);
 	}
 
 	

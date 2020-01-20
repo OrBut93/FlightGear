@@ -17,25 +17,25 @@
             <Font name="Book Antiqua Bold Italic" size="23.0" />
          </font>
       </Text>
-        <Slider fx:id="rudder" blockIncrement="1.0" layoutX="83.0" layoutY="536.0" max="1.0" min="-1.0" prefHeight="13.0" prefWidth="420.0" />
+        <Slider fx:id="rudder" blockIncrement="1.0" layoutX="78.0" layoutY="535.0" max="1.0" min="-1.0" onDragDropped="#resRudder" prefHeight="13.0" prefWidth="420.0" />
         <Slider fx:id="throttle" layoutX="59.0" layoutY="227.0" orientation="VERTICAL" prefHeight="306.0" prefWidth="16.0" />
         <Text layoutX="274.0" layoutY="1.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="4.0" />
-        <Text layoutX="258.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Elevator">
+        <Text layoutX="404.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Elevator" textAlignment="CENTER" wrappingWidth="87.20000000000005">
+            <font>
+                <Font name="System Bold" size="17.0" />
+            </font>
+        </Text>
+        <Text layoutX="266.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aileron0">
+            <font>
+                <Font name="System Bold" size="17.0" />
+            </font>
+        </Text>
+        <Text layoutX="12.0" layoutY="386.0" rotate="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="throttle">
             <font>
                 <Font size="17.0" />
             </font>
         </Text>
-        <Text layoutX="399.0" layoutY="407.0" rotate="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aileron">
-            <font>
-                <Font size="17.0" />
-            </font>
-        </Text>
-        <Text layoutX="24.0" layoutY="397.0" rotate="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="throttle">
-            <font>
-                <Font size="17.0" />
-            </font>
-        </Text>
-        <Text layoutX="268.0" layoutY="568.0" strokeType="OUTSIDE" strokeWidth="0.0" text="rudder">
+        <Text layoutX="263.0" layoutY="574.0" strokeType="OUTSIDE" strokeWidth="0.0" text="rudder">
             <font>
                 <Font size="17.0" />
             </font>
@@ -45,8 +45,8 @@
                 <Font name="Cooper Black" size="40.0" />
             </font>
         </Text>
-        <Circle fx:id="outerCircle" fill="#ad6363" layoutX="293.0" layoutY="400.0" opacity="0.1" radius="100.0" stroke="#616161" strokeType="INSIDE" />
-        <Circle fx:id="innerCircle" fill="#ae6363" layoutX="293.0" layoutY="400.0" onMouseDragged="#innerDragged" onMousePressed="#innerPressed" onMouseReleased="#innerReleased" radius="20.0" stroke="BLACK">
+        <Circle fx:id="outerCircle" fill="#ad6363" layoutX="293.0" layoutY="373.0" opacity="0.1" radius="100.0" stroke="#616161" strokeType="INSIDE" />
+        <Circle fx:id="innerCircle" fill="#ae6363" layoutX="293.0" layoutY="373.0" onMouseDragged="#innerDragged" onMousePressed="#innerPressed" onMouseReleased="#innerReleased" radius="20.0" stroke="BLACK">
             <cursor>
                 <Cursor fx:constant="OPEN_HAND" />
             </cursor>

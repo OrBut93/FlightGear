@@ -15,10 +15,11 @@ public class MyModel implements Model   {
 
 	}
 
+		
 	@Override
 	public void setThrottle(double value) {
-		System.out.println("throttle "+value);
-		this.client.writeClient("set /controls/flight/throttle " + value);
+		System.out.println("set /controls/engines/current-engine/throttle "+value);
+		this.client.writeClient("set /controls/engines/current-engine/throttle " + value);
 	}
 
 	@Override
