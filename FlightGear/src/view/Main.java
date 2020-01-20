@@ -31,7 +31,7 @@ public class Main extends Application {
 			WindowController wc = fxl.getController(); // View
 			wc.setViewModel(vm);
 
-			Scene scene = new Scene(root, 600, 600);
+			Scene scene = new Scene(root, 650, 600);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
