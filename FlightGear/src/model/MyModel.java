@@ -1,10 +1,5 @@
 package model;
-
-import interpeter.Interpeter;
-import javafx.beans.InvalidationListener;
 import view.FlightGearClient;
-
-import java.util.Observable;
 
 public class MyModel implements Model   {
 	FlightGearClient client;
@@ -12,10 +7,8 @@ public class MyModel implements Model   {
 	public MyModel() {
 		this.client = new FlightGearClient("127.0.0.1",5402);
 		this.client.runClient();
-
 	}
-
-		
+	
 	@Override
 	public void setThrottle(double value) {
 		System.out.println("set /controls/engines/current-engine/throttle "+value);

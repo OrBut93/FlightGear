@@ -1,18 +1,12 @@
 package view;
 
 import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.DoublePropertyBase;
+
 import javafx.beans.property.SimpleDoubleProperty;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import javafx.scene.shape.StrokeType;
 
-import java.util.concurrent.TimeUnit;
 
 public class JoystickDisplayer extends AnchorPane {
 

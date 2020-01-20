@@ -1,7 +1,5 @@
 package commands;
 
-import interpeter.Interpeter;
-
 public class SleepCommand implements Command {
 
     @Override

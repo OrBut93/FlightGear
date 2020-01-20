@@ -1,6 +1,4 @@
 package commands;
-
-import interpeter.Interpeter;
 import server.DataReaderServer;
 
 public class OpenDataServerCommand implements Command {

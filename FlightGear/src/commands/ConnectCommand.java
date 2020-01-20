@@ -1,6 +1,5 @@
 package commands;
 
-import flightgear.Client;
 import flightgear.FlightGearClient;
 import interpeter.Interpeter;
 

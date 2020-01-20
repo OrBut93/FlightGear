@@ -1,8 +1,5 @@
 package commands;
-
-import commands.Variable.Variable;
 import expressions.ShuntingYard;
-import interpeter.Interpeter;
 import test.MyInterpreter;
 
 import java.util.Arrays;

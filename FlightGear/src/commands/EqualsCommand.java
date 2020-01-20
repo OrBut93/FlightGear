@@ -3,8 +3,6 @@ package commands;
 import commands.Variable.Variable;
 import expressions.ShuntingYard;
 import interpeter.Interpeter;
-
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class EqualsCommand implements Command{

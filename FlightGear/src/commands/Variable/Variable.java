@@ -1,7 +1,5 @@
 package commands.Variable;
 
-import commands.ConnectCommand;
-import flightgear.FlightGearClient;
 import interpeter.Interpeter;
 
 import java.util.Observable;

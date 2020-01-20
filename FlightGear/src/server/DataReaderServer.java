@@ -1,13 +1,9 @@
 package server;
-
-import commands.ConnectCommand;
-import commands.Variable.Variable;
 import interpeter.Interpeter;
-
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.*;
+
 
 public class DataReaderServer implements Server {
     int port ;

@@ -7,7 +7,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Circle;
-import model.Model;
 import model.MyModel;
 import view_model.ViewModel;
 

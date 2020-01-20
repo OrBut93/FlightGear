@@ -2,16 +2,12 @@ package view;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import model.Model;
 import model.MyModel;
 import view_model.ViewModel;
-
-import javax.swing.text.View;
-import java.beans.beancontext.BeanContextServiceRevokedEvent;
 import java.io.IOException;
 
 public class Main extends Application {
