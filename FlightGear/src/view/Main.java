@@ -21,7 +21,7 @@ public class Main extends Application {
 
 			FXMLLoader fxl = new FXMLLoader(getClass().getResource("Window.fxml"));
 			AnchorPane root = (AnchorPane) fxl.load();
-			root.setStyle("-fx-background-image: url(\"/resources/123.jpeg\");"+
+			root.setStyle("-fx-background-image: url(\"/files/123.jpeg\");"+
 					"-fx-background-size: cover;");
 
 			WindowController wc = fxl.getController(); // View
