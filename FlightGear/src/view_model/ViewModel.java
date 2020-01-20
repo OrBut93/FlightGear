@@ -14,6 +14,7 @@ import java.util.Observer;
 public class ViewModel   {
 	public DoubleProperty throttle,rudder,aileron,elevator;
 	Model model;
+	
 	public ViewModel(Model model) {
 		this.model=model;
 

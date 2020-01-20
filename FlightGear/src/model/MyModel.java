@@ -8,6 +8,7 @@ import java.util.Observable;
 
 public class MyModel implements Model   {
 	FlightGearClient client;
+	
 	public MyModel() {
 		this.client = new FlightGearClient("127.0.0.1",5402);
 		this.client.runClient();
@@ -37,6 +38,10 @@ public class MyModel implements Model   {
 		this.client.writeClient("set /controls/flight/elevator " + value);
 		System.out.println("elevator "+value);
 
+	}
+	
+	public void reset() {
+		this.client.writeClient("set /controls/flight/rudder " + 0);
 	}
 
 

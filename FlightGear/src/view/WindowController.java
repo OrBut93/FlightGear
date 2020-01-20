@@ -7,13 +7,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Circle;
+import model.Model;
+import model.MyModel;
 import view_model.ViewModel;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class WindowController implements Initializable  {
-	
 	ViewModel vm;
 	
 	@FXML
@@ -28,7 +29,6 @@ public class WindowController implements Initializable  {
 	Circle outerCircle;
 
 	public DoubleProperty aileron, elevator;
-
 
 	public void setViewModel(ViewModel vm) {
 		this.vm=vm;
@@ -55,7 +55,6 @@ public class WindowController implements Initializable  {
 
 	}
 
-
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		joystick = new JoystickDisplayer(innerCircle,outerCircle);
@@ -64,8 +63,12 @@ public class WindowController implements Initializable  {
 		elevator.bind(joystick.elevator);
 		aileron.bind(joystick.aileron);
 	}
+
 	
 	public void resRudder(){
 		System.out.println("hi");
+		
 	}
+
+	
 }
