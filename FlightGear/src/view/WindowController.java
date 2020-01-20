@@ -64,4 +64,8 @@ public class WindowController implements Initializable  {
 		elevator.bind(joystick.elevator);
 		aileron.bind(joystick.aileron);
 	}
+	
+	public void resRudder(){
+		System.out.println("hi");
+	}
 }
