@@ -3,6 +3,7 @@ package interpeter;
 import commands.*;
 import commands.Variable.Variable;
 import flightgear.FlightGearClient;
+import sun.awt.windows.WPrinterJob;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -61,7 +62,7 @@ public class Interpeter {
     private void Init_symbol_table() {
         for (String conf : Configure)
         {
-            symbolTable.put(conf,new Variable(0.0," "));
+            symbolTable.put(conf, new Variable(0.0," "));
         }
     }
 
@@ -80,6 +81,7 @@ public class Interpeter {
             s = s.trim().replaceAll(" +", " ");
             output.add(s);
         }
+
         lexerOutput = output;
     }
 

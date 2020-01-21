@@ -1,5 +1,5 @@
 package model;
-import view.FlightGearClient;
+import flightgear.FlightGearClient;
 
 public class MyModel implements Model   {
 	FlightGearClient client;
