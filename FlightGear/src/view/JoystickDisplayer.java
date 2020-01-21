@@ -7,28 +7,24 @@ import javafx.scene.shape.Circle;
 public class JoystickDisplayer extends AnchorPane {
 
 
-    Circle outerCircle, innerCircle;
+    Circle innerCircle;
 
     DoubleProperty aileron, elevator;
-    //double orgSceneX, orgSceneY;
-    public JoystickDisplayer(Circle inner, Circle outer) {
-        outerCircle = outer;
+    public JoystickDisplayer(Circle inner) {
         innerCircle = inner;
         aileron = new SimpleDoubleProperty();
         elevator = new SimpleDoubleProperty();
-        //orgSceneX = orgSceneY = 0;
     }
 
     public void innerReleased(MouseEvent e) {              	// When inner circle is released event handler
         innerCircle.setCenterY(0);
-        innerCircle.setCenterX(                                                                                                                                                          0);
-
+        innerCircle.setCenterX(0);
         elevator.set(0);
         aileron.set(0);
     }
 
     public void innerDragged(MouseEvent e) {				// When inner circle is dragged event handler
-        double max_range = 90.0;
+        double max_range = 100.0;
         if (e.getX() >= 0)
             innerCircle.setCenterX(Double.min(max_range, e.getX()));
          else

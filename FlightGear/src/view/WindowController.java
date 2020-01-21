@@ -21,14 +21,12 @@ public class WindowController implements Initializable  {
 	JoystickDisplayer joystick;
 	@FXML
 	Circle innerCircle;
-	@FXML
-	Circle outerCircle;
 
 	public DoubleProperty aileron, elevator;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		joystick = new JoystickDisplayer(innerCircle,outerCircle);
+		joystick = new JoystickDisplayer(innerCircle);
 		aileron = new SimpleDoubleProperty();
 		elevator = new SimpleDoubleProperty();
 		elevator.bind(joystick.elevator);
