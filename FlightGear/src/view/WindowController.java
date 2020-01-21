@@ -18,7 +18,7 @@ public class WindowController implements Initializable  {
 	@FXML
 	Slider rudder;
 	@FXML
-	JoystickDisplayer joystick;
+	MainController joystick;
 	@FXML
 	Circle innerCircle;
 
@@ -26,7 +26,7 @@ public class WindowController implements Initializable  {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		joystick = new JoystickDisplayer(innerCircle);
+		joystick = new MainController(innerCircle);
 		aileron = new SimpleDoubleProperty();
 		elevator = new SimpleDoubleProperty();
 		elevator.bind(joystick.elevator);
