@@ -55,7 +55,6 @@ public class Interpeter {
         commands.put("equals", new EqualsCommand());
         commands.put("disconnect", new DisconnectCommand());
         commands.put("print", new PrintCommand());
-        commands.put("return", new ReturnCommand());
         commands.put("sleep", new SleepCommand());
     }
 
