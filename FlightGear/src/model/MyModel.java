@@ -6,37 +6,14 @@ public class MyModel implements Model   {
 	
 	public MyModel() {
 		this.client = new FlightGearClient("127.0.0.1",5402);
-		this.client.runClient();
+		this.client.run_client();
 	}
-	
 	@Override
-	public void setThrottle(double value) {
-		System.out.println("set /controls/engines/current-engine/throttle "+value);
-		this.client.writeClient("set /controls/engines/current-engine/throttle " + value);
-	}
-
+	public void setThrottle(double value) { this.client.send_command("set /controls/engines/current-engine/throttle " + value); }
 	@Override
-	public void setRudder(double value) {
-		this.client.writeClient("set /controls/flight/rudder " + value);
-		System.out.println("rudder "+ value);
-	}
-
+	public void setRudder(double value) { this.client.send_command("set /controls/flight/rudder " + value); }
 	@Override
-	public void setAileron(double value) {
-		this.client.writeClient("set /controls/flight/aileron " + value);
-		System.out.println("aileron "+value);
-	}
-
+	public void setAileron(double value) { this.client.send_command("set /controls/flight/aileron " + value); }
 	@Override
-	public void setElevator(double value) {
-		this.client.writeClient("set /controls/flight/elevator " + value);
-		System.out.println("elevator "+value);
-
-	}
-	
-	public void reset() {
-		this.client.writeClient("set /controls/flight/rudder " + 0);
-	}
-
-
+	public void setElevator(double value) { this.client.send_command("set /controls/flight/elevator " + value); }
 }

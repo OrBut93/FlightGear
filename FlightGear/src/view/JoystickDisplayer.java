@@ -1,27 +1,22 @@
 package view;
-
 import javafx.beans.property.DoubleProperty;
-
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
-
-
 public class JoystickDisplayer extends AnchorPane {
 
 
     Circle outerCircle, innerCircle;
 
     DoubleProperty aileron, elevator;
-    double orgSceneX, orgSceneY;
+    //double orgSceneX, orgSceneY;
     public JoystickDisplayer(Circle inner, Circle outer) {
         outerCircle = outer;
         innerCircle = inner;
         aileron = new SimpleDoubleProperty();
         elevator = new SimpleDoubleProperty();
-        orgSceneX = orgSceneY = 0;
-
+        //orgSceneX = orgSceneY = 0;
     }
 
     public void innerReleased(MouseEvent e) {              	// When inner circle is released event handler
@@ -32,30 +27,18 @@ public class JoystickDisplayer extends AnchorPane {
         aileron.set(0);
     }
 
-    public void innerPressed(MouseEvent e) {				// When inner circle is pressed event handler
-        orgSceneX = e.getSceneX();
-        orgSceneY = e.getSceneY();
-        this.innerCircle.toFront();
-    }
-
     public void innerDragged(MouseEvent e) {				// When inner circle is dragged event handler
-
-        double maxRange = outerCircle.getRadius() - this.innerCircle.getRadius();
-        innerCircle.setCenterX(0);
-        innerCircle.setCenterY(0);
-        innerCircle.setCenterX(e.getX());
-        innerCircle.setCenterY(e.getY());
-
+        double max_range = 90.0;
         if (e.getX() >= 0)
-            innerCircle.setCenterX(Double.min(maxRange, e.getX()));
+            innerCircle.setCenterX(Double.min(max_range, e.getX()));
          else
-             innerCircle.setCenterX(Double.max(- maxRange, e.getX()));
+             innerCircle.setCenterX(Double.max(- max_range, e.getX()));
          if (e.getY() >= 0)
-             innerCircle.setCenterY(Double.min( maxRange, e.getY()));
+             innerCircle.setCenterY(Double.min( max_range, e.getY()));
          else
-             innerCircle.setCenterY(Double.max(- maxRange, e.getY()));
-         aileron.set(innerCircle.getCenterX()/maxRange);
-         elevator.set(-innerCircle.getCenterY()/maxRange);
+             innerCircle.setCenterY(Double.max(- max_range, e.getY()));
+         aileron.set(innerCircle.getCenterX()/max_range);
+         elevator.set(-innerCircle.getCenterY()/max_range);
 
     }
 }

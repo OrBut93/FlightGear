@@ -25,7 +25,7 @@ public class FlightGearClient {
         reader = null;
     }
 
-    public void runClient(){
+    public void run_client(){
         try{
             socket = new Socket(ip, port);
             reader = new  BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -35,7 +35,7 @@ public class FlightGearClient {
         }
     }
 
-    public void writeClient(String data) {
+    public void send_command(String data) {
         writer.write(data + "\r\n");
         writer.flush();
     }
