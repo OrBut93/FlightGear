@@ -10,47 +10,37 @@ import java.net.Socket;
 import java.util.Observable;
 import java.util.Observer;
 
-public class FlightGearClient implements Client, Observer {
+public class FlightGearClient {
     public int port;
     public String ip;
-    public Socket theServer;
+    public Socket socket;
     public PrintWriter writer;
     public BufferedReader reader;
 
-    public FlightGearClient( String ip,int port) {
-        this.port = port;
+    public FlightGearClient(String ip, int port) {
         this.ip = ip;
-        theServer = null;
+        this.port = port;
+        socket = null;
         writer = null;
         reader = null;
     }
 
-    @Override
-    public void runClient(){
+    public void run_client(){
         try{
-            theServer = new Socket(ip,port);
-            reader = new  BufferedReader(new InputStreamReader(theServer.getInputStream()));
-            writer = new PrintWriter(theServer.getOutputStream());
+            socket = new Socket(ip, port);
+            reader = new  BufferedReader(new InputStreamReader(socket.getInputStream()));
+            writer = new PrintWriter(socket.getOutputStream());
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    @Override
-    public void writeClient(String data) {
-        writer.println(data);
+    public void send_command(String data) {
+        writer.write(data + "\r\n");
         writer.flush();
     }
 
-    @Override
     public void stopClient() throws IOException {
-        theServer.close();
-    }
-
-    @Override
-    public void update(Observable observable, Object o) {
-        Variable obj = ((Variable)observable) ;
-        String data = "set" + obj.getBindPath() + obj.getValue();
-        this.writeClient(data);
+        socket.close();
     }
 }

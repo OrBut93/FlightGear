@@ -1,33 +1,37 @@
 package view;
 
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.SimpleDoubleProperty;
+import java.net.URL;
 import javafx.fxml.FXML;
+import view_model.ViewModel;
+import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
+import javafx.scene.shape.Circle;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.shape.Circle;
-import model.MyModel;
-import view_model.ViewModel;
-
-import java.net.URL;
-import java.util.ResourceBundle;
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
 
 public class WindowController implements Initializable  {
 	ViewModel vm;
-	MyModel m;
 	@FXML
 	Slider throttle;
 	@FXML
 	Slider rudder;
 	@FXML
-	JoystickDisplayer joystick;
+	MainController joystick;
 	@FXML
 	Circle innerCircle;
-	@FXML
-	Circle outerCircle;
 
 	public DoubleProperty aileron, elevator;
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		joystick = new MainController(innerCircle);
+		aileron = new SimpleDoubleProperty();
+		elevator = new SimpleDoubleProperty();
+		elevator.bind(joystick.elevator);
+		aileron.bind(joystick.aileron);
+	}
 
 	public void setViewModel(ViewModel vm) {
 		this.vm=vm;
@@ -35,37 +39,13 @@ public class WindowController implements Initializable  {
 		vm.throttle.bind(throttle.valueProperty());
 		vm.aileron.bindBidirectional(this.aileron);
 		vm.elevator.bindBidirectional(this.elevator);
-
 	}
 
+	public void innerDragged(MouseEvent e) { joystick.innerDragged(e); }
 
-	public void innerPressed(MouseEvent e) {
-			joystick.innerPressed(e);
-	}
+	public void innerReleased(MouseEvent e) { joystick.innerReleased(e); }
 
-	public void innerDragged(MouseEvent e) {
-			joystick.innerDragged(e);
-
-
-	}
-
-	public void innerReleased(MouseEvent e) {
-		joystick.innerReleased(e);
-
-	}
-
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		joystick = new JoystickDisplayer(innerCircle,outerCircle);
-		aileron = new SimpleDoubleProperty();
-		elevator = new SimpleDoubleProperty();
-		elevator.bind(joystick.elevator);
-		aileron.bind(joystick.aileron);
-	}
-
-	
 	public void rudder_reset(){
-		
 		rudder.setValue(0.0);
 	}
 

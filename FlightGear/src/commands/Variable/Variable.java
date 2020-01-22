@@ -36,7 +36,7 @@ public class Variable extends Observable implements Observer {
         if ( value != this.value) {
             this.value = value;
             if(!(this.bindPath.equals(" "))){
-                Interpeter.client.writeClient("set "+bindPath+" "+value);
+                Interpeter.client.send_command("set "+bindPath+" "+value);
             }
             setChanged();
             notifyObservers();
