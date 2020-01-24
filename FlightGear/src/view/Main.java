@@ -19,7 +19,7 @@ public class Main extends Application {
 
 		ViewModel vm = new ViewModel(m); // ViewModel
 		try {
-
+			//Main Loader
 			FXMLLoader fxl = new FXMLLoader(getClass().getResource("Window.fxml"));
 			AnchorPane root = (AnchorPane) fxl.load();
 			root.setStyle("-fx-background-image: url(\"/files/123.jpeg\");"+
